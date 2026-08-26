@@ -37,6 +37,30 @@ class gameService {
             console.log(error)
         }
     }
+
+    // MÉTODO PARA EXCLUIR O JOGO
+    async Delete(id) {
+        try{
+            await Game.findByIdAndDelete(id)
+            // O método findByIdAndDelete() do moongose busca um registro pela ID
+            console.log(`O jogo com a id ${id} foi deletado.`)
+        }catch(error){
+            console.log(error)
+        }
+    }
+
+    // MÉTODO PARA LISTAR UM REGISTRO UNICO
+    async getOne(id){
+        try{
+            const game = await Game.findOne({_id : id})
+            // findOne() : método do Mongoose para selecionar um registro único
+            return game
+        }catch (error){
+            console.log(error)
+        }
+    }
+
+// ENCERRA A CLASSE
 }
 // Exportando a classe
 export default new gameService()
