@@ -1,5 +1,5 @@
 // Importar o Express
-import express from "express";
+import express from 'express';
 // Importar o Mongoose
 import mongoose from "mongoose"
 // Importar o Model
